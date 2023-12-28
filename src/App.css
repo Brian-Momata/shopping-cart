@@ -18,6 +18,10 @@ header {
   margin-right: 20px;
 }
 
+.navLinks ion-icon { 
+  font-size: 26px;
+  cursor: pointer;
+}
 .navLinks li a {
   text-decoration: none;
   color: #fff;

@@ -12,7 +12,7 @@ const Shop = ({products}) => {
             <Link to='/'>Home</Link>
           </li>
           <li>
-            icon
+            <ion-icon name="cart-outline"></ion-icon>
           </li>
         </ul>
       </header>

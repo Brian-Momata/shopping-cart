@@ -13,6 +13,9 @@ const NavLinks = () => {
         <li>
           <Link to='shop'>Shop</Link>
         </li>
+        <li>
+          <ion-icon name="cart-outline"></ion-icon>
+        </li>
       </ul>
     </nav>
   );
