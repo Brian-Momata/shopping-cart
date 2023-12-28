@@ -3,6 +3,10 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #242424;
 }
 
 .navigation {
@@ -18,12 +22,24 @@ header {
   margin-right: 20px;
 }
 
-.navLinks ion-icon { 
+.cart-icon { 
   font-size: 26px;
   cursor: pointer;
+  position: relative;
+  display: inline-block;
 }
 .navLinks li a {
   text-decoration: none;
   color: #fff;
   
+}
+.cart-counter {
+  position: absolute;
+  top: -20px;
+  right: -2px;
+  background-color: #646cff;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 4px 8px;
 }
