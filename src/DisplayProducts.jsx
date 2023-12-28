@@ -1,5 +1,8 @@
 import './DisplayProducts.css';
-const DisplayProducts = ({ products, featured = true, }) => {
+const DisplayProducts = ({ products, featured = true, addToCart }) => {
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  }
   return (
     <div className='products-container'>
         {featured && (<h2>Featured Products</h2>)}
@@ -10,7 +13,7 @@ const DisplayProducts = ({ products, featured = true, }) => {
                 <img src={product.image} alt={product.title} />
                 <h3>{product.title}</h3>
                 <p>${product.price}</p>
-                <button>Add to Cart</button>
+                <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
               </div>
             ))
           ) : featured ? (

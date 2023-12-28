@@ -5,6 +5,11 @@ import Shop from "./Shop";
 
 const Router = () => {
   const [productsData, setProductData] = useState([]);
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  const addToCart = (item) => {
+    setSelectedItems([...selectedItems, item]);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,8 +28,14 @@ const Router = () => {
   }, []);
 
   const router = createBrowserRouter([
-    { path: "/", element: < App products={productsData}/> },
-    { path: "/shop", element: < Shop products={productsData}/> },
+    { 
+      path: "/",
+      element: < App products={productsData} cart={selectedItems} addToCart={addToCart} />
+    },
+    { 
+      path: "/shop",
+      element: < Shop products={productsData} cart={selectedItems} addToCart={addToCart} />
+    },
   ]);
 
   return < RouterProvider router={router} />;
