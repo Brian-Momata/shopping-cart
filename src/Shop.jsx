@@ -1,22 +1,15 @@
 import DisplayProducts from "./DisplayProducts";
-import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import NavLinks from "./NavLinks";
 
-const Shop = ({products}) => {
+const Shop = ({products, addToCart, cart}) => {
   return (
     <>
       <header>
         <h1>Enjoy Your Shopping!</h1>
-        <ul className="navLinks">
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <ion-icon name="cart-outline"></ion-icon>
-          </li>
-        </ul>
+        < NavLinks cartData={cart} />
       </header>
-      <DisplayProducts products={products} featured={false} />
+      <DisplayProducts products={products} featured={false} addToCart={addToCart} />
       < Footer />
     </>
   );
