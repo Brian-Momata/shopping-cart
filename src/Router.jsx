@@ -11,6 +11,10 @@ const Router = () => {
     setSelectedItems([...selectedItems, item]);
   };
 
+  const updateCart = (newCart) => {
+    setSelectedItems(newCart);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,11 +34,11 @@ const Router = () => {
   const router = createBrowserRouter([
     { 
       path: "/",
-      element: < App products={productsData} cart={selectedItems} addToCart={addToCart} />
+      element: < App products={productsData} cart={selectedItems} addToCart={addToCart} updateCart={updateCart}/>
     },
     { 
       path: "/shop",
-      element: < Shop products={productsData} cart={selectedItems} addToCart={addToCart} />
+      element: < Shop products={productsData} cart={selectedItems} addToCart={addToCart} updateCart={updateCart}/>
     },
   ]);
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 import Modal from "./Modal";
 
-const NavLinks = ({ cartData }) => {
+const NavLinks = ({ cartData, updateCart }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -33,7 +33,7 @@ const NavLinks = ({ cartData }) => {
           </li>
         </ul>
       </nav>
-      < Modal isOpen={isModalOpen} onClose={closeModal} cart={cartData} />
+      < Modal isOpen={isModalOpen} onClose={closeModal} cart={cartData} updateCart={updateCart}/>
     </>
   );
 };
